@@ -19,11 +19,14 @@ namespace Lab_2
             Console.WriteLine(findRepeatingElementResult);
 
             //should return Fizz
-            Console.WriteLine(FizzBuzz(45)); 
+            string fizz = FizzBuzz(6);
+            Console.WriteLine(fizz);
             //should return Buzz
-            Console.WriteLine(FizzBuzz(45));
+            string buzz = FizzBuzz(35);
+            Console.WriteLine(buzz);
             //should return FizzBuzz
-            Console.WriteLine(FizzBuzz(45));
+            string fizzbuzz = FizzBuzz(45);
+            Console.WriteLine(fizzbuzz);
         }
 
         public static int silnia(int num)
@@ -48,9 +51,13 @@ namespace Lab_2
             else return FindRepeatingElement(elements[1..], element) + 0;
         }
 
+
+        public static int GetRemainder(int num, int divisor) => num - divisor * (num / divisor);
         public static string FizzBuzz(int num)
         {
-
+            if (GetRemainder(num, 15) == 0) return "FizzBuzz";
+            if (GetRemainder(num, 5) == 0) return "Buzz";
+            if (GetRemainder(num, 3) == 0) return "Fizz";
             return "";
         }
     }
